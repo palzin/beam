@@ -6,8 +6,8 @@
     "minimum-stability": "stable",
     "prefer-stable": true,
     "authors": [{
-        "name": "Luan Freitas",
-        "email": "luanfreitas10@protonmail.com",
+        "name": "Palzin Team",
+        "email": "hello@palzin.com",
         "role": "Developer"
     }],
     "require": {
@@ -15,7 +15,7 @@
         "nunomaduro/termwind": "^1.15.1|^2.0.1",
         "illuminate/support": "^10.0|^11.0|^12.0",
         "illuminate/mail": "^10.0|^11.0|^12.0",
-        "palzin/beam-core": "^3.0"
+        "palzin/beam-core": "^1.0"
     },
     "require-dev": {
         "orchestra/testbench-core": "^8.0|^9.4|^10.0",
