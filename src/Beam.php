@@ -12,9 +12,9 @@ use Beam\Beam\Observers\{CacheObserver,
     QueryObserver,
     ScheduledCommandObserver};
 use Beam\Beam\Payloads\{MailablePayload, MarkdownPayload, ModelPayload, RoutesPayload};
-use Beam\BeamCore\BeamLaravel as BaseBeamLaravel;
+use Beam\BeamCore\Beam as BaseBeam;
 
-class BeamLaravel extends BaseBeamLaravel
+class Beam extends BaseBeam
 {
     protected function beforeWrite(mixed $args): \Closure
     {
@@ -52,7 +52,7 @@ class BeamLaravel extends BaseBeamLaravel
     /**
      * Shows model attributes and relationship
      */
-    public function model(Model ...$models): BeamLaravel
+    public function model(Model ...$models): Beam
     {
         foreach ($models as $model) {
             if ($model instanceof Model) {

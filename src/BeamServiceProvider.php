@@ -23,7 +23,7 @@ use Beam\Beam\Payloads\QueryPayload;
 use Beam\BeamCore\Actions\Dumper;
 use Beam\BeamCore\Payloads\{DumpPayload, TableV2Payload};
 
-class BeamLaravelServiceProvider extends ServiceProvider
+class BeamServiceProvider extends ServiceProvider
 {
     public function boot(): void
     {
@@ -88,7 +88,7 @@ class BeamLaravelServiceProvider extends ServiceProvider
     private function registerMacros(): void
     {
         Collection::macro('ds', function (string $label = '') {
-            $beam = new BeamLaravel();
+            $beam = new Beam();
             $beam->write($this->items); // @phpstan-ignore-line
 
             if ($label) {
@@ -99,7 +99,7 @@ class BeamLaravelServiceProvider extends ServiceProvider
         });
 
         Stringable::macro('ds', function (string $label = '') {
-            $beam = new BeamLaravel();
+            $beam = new Beam();
             $beam->write($this->value); // @phpstan-ignore-line
 
             if ($label) {
@@ -113,7 +113,7 @@ class BeamLaravelServiceProvider extends ServiceProvider
             $payload = new QueryPayload($this);
             $payload->setDumpId(uniqid());
 
-            $beam = new BeamLaravel();
+            $beam = new Beam();
             $beam->send($payload);
 
             return $this;
@@ -131,7 +131,7 @@ class BeamLaravelServiceProvider extends ServiceProvider
                 'Exception' => Dumper::dump($this->exceptions->all())[0],
             ]);
 
-            $beam = new BeamLaravel();
+            $beam = new Beam();
             $beam->send($payload);
             $beam->label('Test Response');
 
@@ -151,7 +151,7 @@ class BeamLaravelServiceProvider extends ServiceProvider
                     'line' => data_get($frame, 'line'),
                 ];
 
-                $beam = new BeamLaravel();
+                $beam = new Beam();
 
                 [$pre, $id] = Dumper::dump($this->value); // @phpstan-ignore-line
 
