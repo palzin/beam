@@ -1,18 +1,18 @@
 <?php
 
-namespace BeamLaravel\BeamLaravel;
+namespace Beam\Beam;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Mail\Mailable;
-use BeamLaravel\BeamLaravel\Livewire\Support\Debug;
-use BeamLaravel\BeamLaravel\Observers\{CacheObserver,
+use Beam\Beam\Livewire\Support\Debug;
+use Beam\Beam\Observers\{CacheObserver,
     CommandObserver,
     GateObserver,
     HttpClientObserver,
     QueryObserver,
     ScheduledCommandObserver};
-use BeamLaravel\BeamLaravel\Payloads\{MailablePayload, MarkdownPayload, ModelPayload, RoutesPayload};
-use BeamLaravel\BeamLaravelCore\BeamLaravel as BaseBeamLaravel;
+use Beam\Beam\Payloads\{MailablePayload, MarkdownPayload, ModelPayload, RoutesPayload};
+use Beam\BeamCore\BeamLaravel as BaseBeamLaravel;
 
 class BeamLaravel extends BaseBeamLaravel
 {
