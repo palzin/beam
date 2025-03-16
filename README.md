@@ -13,8 +13,12 @@
 </div>
  <br/>
 <div align="center">
-  
-</div>
+ <p align="center">
+      <img src="./art/os/windows.png" height="60" alt="PalzinDumps Windows App" />
+      <img src="./art/os/macos.png" height="60" alt="PalzinDumps MacOS App" />
+      <img src="./art/os/linux.png" height="60" alt="PalzinDumps Linux App" />
+  </p>
+ </div>
 
 ### 👋 Hello Dev,
 
